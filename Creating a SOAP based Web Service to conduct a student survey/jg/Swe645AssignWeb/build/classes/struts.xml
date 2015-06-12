@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="Surveying" namespace="/" extends="struts-default">
+      <action name="FormSubmit" class="ActionClasses.StudentServices" method="CreateForm">
+            <result name="success">/Regards.jsp</result>
+            <result name="raffle">/Raffle.jsp</result>
+            <result name="fail">/fail.jsp</result>
+            <result name="input">/Form.jsp</result>
+      </action>
+      <action name="FormSearch" class ="ActionClasses.StudentSearch" method ="ListSearch">
+            <result name="RetrievedDesiredForm">/RetrievedFromSS.jsp</result>
+            <result name="FailedToRetrieveDesiredForm">/fail.jsp</result>
+      </action>
+      <action name="SSRemove" class ="ActionClasses.StudentSearch" method="Saw">
+            <result name="gotit">/RetrievedFromSS.jsp</result>
+            <result name="fail">/fail.jsp</result>            
+      </action>
+      <action name="GetAllForms" class ="ActionClasses.RetrieveAllForms" method="GetAllForms">
+            <result name="gotall">/RetrievedFromRAF.jsp</result>
+            <result name="fail">/fail.jsp</result>            
+      </action>
+      <action name="RAFRemove" class ="ActionClasses.RetrieveAllForms" method="Saw">
+            <result name="gotall">/RetrievedFromRAF.jsp</result>
+            <result name="fail">/fail.jsp</result>            
+      </action>      
+   </package>
+</struts>
